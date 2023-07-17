@@ -1,0 +1,48 @@
+
+<view class="container">
+    <!-- 顶部 -->
+    <view class="top">
+
+    </view>
+
+    <!-- 卡片 -->
+    <view class="info">
+        <view class="userinfo">
+
+            <van-cell-group>
+                <!-- 修改密码应该弹出个弹出窗以供修改 -->
+                <van-cell title="修改密码" is-link bind:click="showPopup" />
+                <van-cell title="注销账号" is-link bind:click="removeAccount" />
+            </van-cell-group>
+
+            <!-- 底部弹出窗修改密码 -->
+            <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%;" bind:close="onClose">
+                <view class="title">修改密码</view>
+                <!-- 新密码 -->
+                <view class="newPassword">
+                    <van-field model:value="{{newPassword }}" label="新密码" placeholder="请输入新密码" error-message="{{PasswordError}}" bind:blur="checkPassword" border="{{ false }}"
+                    data-rule="new"
+                     />
+                </view>
+                <!-- 旧密码 -->
+                <view class="oldPassword">
+                    <van-field model:value="{{ oldPassword }}" label="旧密码" placeholder="请输入旧密码" error-message="{{PasswordError}}" bind:blur="checkPassword" border="{{ false }}"
+                    data-rule="old"
+                     />
+                </view>
+                <!-- 确定修改 -->
+                <van-button type="primary" color="#fffff" bindtap="modifyPassword" round size="large">确定修改</van-button>
+            </van-popup>
+            
+            <van-toast id="van-toast" />
+
+            <view class="exitLogin">
+                <van-button type="primary" color="#1989fa" bindtap="exitLogin" round size="large">退出登录</van-button>
+                <van-dialog id="van-dialog" />
+            </view>
+        </view>
+
+    </view>
+
+
+</view>

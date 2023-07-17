@@ -1,0 +1,96 @@
+/* pages/detail/index.wxss */
+.detail {
+    background-color: #f5f5f5;
+    position: relative;
+    height: 600px;
+}
+
+.img {
+    width: 100%;
+}
+
+.img>image {
+    /* 图片限定宽度，父类最好也加 */
+    width: 100%;
+}
+
+.shop-info {
+    width: 95%;
+    margin: 0 8px;
+    /*居中*/
+    height: 300px;
+    background-color: #fff;
+    position: absolute;
+    top: 220px;
+    border-radius: 5px;
+}
+
+.shop-top {
+    margin: 12px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shop-name{
+    font-size: 14px;
+}
+.shop-enname{
+    font-size: 11px;
+    color:#999999;
+}
+.shop-price{
+    color:red;
+}
+.rule-box{
+   padding-bottom: 5px;
+}
+.rule-item{
+    margin-top: 10px;
+    display: flex;
+}
+.rule-title{
+    margin-left: 7px;
+    width: 40px;
+}
+.rule-select{
+    margin-left: 15px;
+    background-color:#e8e8e8;
+    width: 60px;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 15px;
+    color: black;
+}
+.rule-selected{
+    margin-left: 15px;
+    background-color:#3762f0;
+    width: 60px;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+}
+.count{
+    padding-top: 15px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px #f5f5f5 solid;
+    border-top:1px #f5f5f5 solid ;
+}
+.text{
+    align-items: center;
+    font-size: 14px;
+    color: #666666;
+}
+.desc{
+    margin-left: 10px;
+}
+.desc-title{
+    font-size: 14px;
+}
+.shop-desc{
+    margin-top: 10px;
+    font-size: 13px;
+}

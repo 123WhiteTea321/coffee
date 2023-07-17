@@ -1,0 +1,26 @@
+<!--pages/address/index.wxml-->
+<view class="container">
+    <view class="address-list">
+     <view class="blank"></view>
+        <view class="card">
+            <view class="left">
+                <view class="name-phone-tip">
+                    <view class="name">康刘勇</view>
+                    <view class="phone">13543519489</view>
+                    <!-- 这个默认怎么处理？绑定 wx:if 吗? -->
+                    <view class="tip">默认</view>
+                </view>
+                <view class="address">广东省广州市天河区珠吉街道100号</view>
+            </view>
+            <view class="right">
+              <view class="img" bindtap="editAddress">
+               <image src="/images/edit.png" mode="widthFix"></image>
+              </view>
+            </view>
+        </view>
+
+    </view>
+    <view class="add-address" bindtap="addAddress">
+        新增地址
+    </view>
+</view>

@@ -1,0 +1,4 @@
+<!-- index.wxml -->
+<view class="container">
+  <image src="{{imageSrc}}" mode="widthFix" style="transform: translate({{translateX}}px, {{translateY}}px) scale({{scale}});" bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove" bindtouchend="handleTouchEnd" class="movable-image"></image>
+</view>

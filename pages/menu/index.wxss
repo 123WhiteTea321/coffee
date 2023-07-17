@@ -1,0 +1,5 @@
+/* pages/menu/index.wxss */
+.container{
+    display: flex;
+
+}

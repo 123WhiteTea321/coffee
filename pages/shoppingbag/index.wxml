@@ -1,0 +1,62 @@
+<!--pages/shoppingbag/index.wxml-->
+<view class="cart">
+    <view class="top-bg">
+        <image src="/images/shopbag_bg.png" mode="widthFix"></image>
+    </view>
+
+    <view class="container">
+        <!-- 已登录 -->
+        <view class="logined" wx:if="{{isLogined}}">
+            <view class="cartBox">
+                <view class="cartList" wx:for="{{cartList}}">
+                    <van-swipe-cell right-width="{{ 45 }}">
+                    <!-- 商品列表 -->
+                        <van-cell-group  >
+                            <view class="cart-left">
+                                <van-checkbox value="{{ item.checked }}" checked-color="#0c34ba" icon-size="15px" bind:change="onChange" data-id="{{index}}"></van-checkbox>
+                            </view>
+                            <view class="cart-right">
+                                <view class="img">
+                                    <image src="{{item.small_img}}" mode="widthFix"></image>
+                                </view>
+                                <view class="cart-info">
+                                    <view class="info-top">
+                                        <view class="name">{{item.name}}</view>
+                                        <view class="rule">{{item.rule}}</view>
+                                    </view>
+                                    <view class="enname">{{item.enname}}</view>
+                                    <view class="price-count">
+                                        <view class="price">￥{{item.price}}</view>
+                                        <view class="count">
+                                            <van-stepper bind:change="onChanged" value="{{ item.count }}" theme="round" input-width="30px" button-size="18px" data-index="{{index}}" bind:plus="modifyShopCount" bind:minus="modifyShopCount" />
+                                        </view>
+                                    </view>
+
+                                </view>
+                            </view>
+                        </van-cell-group>
+                        <view slot="right" class="delete" bindtap="delete" data-index="{{index}}">  删除</view>
+                    </van-swipe-cell>
+
+                </view>
+                <view class="blank"></view>
+            </view>
+
+            <!-- 底部提交订单栏 -->
+            <van-submit-bar price="{{ totalPrice*100 }}" button-text="提交订单" bind:submit="onClickButton" tip="{{ true }}">
+                <!-- 全选复选框 -->
+                <van-checkbox value="{{ allChecked }}" checked-color="#0c34ba" icon-size="15px" bind:change="onChangeAll"></van-checkbox>
+                <van-tag type="primary">全选</van-tag>
+
+            </van-submit-bar>
+
+
+        </view>
+
+
+        <!-- 未登录 -->
+        <view class="not-login" wx:else>
+            <van-button class="btn" round type="info" size="small" color="#0c34ba" bindtap="gologin">去登录</van-button>
+        </view>
+    </view>
+</view>

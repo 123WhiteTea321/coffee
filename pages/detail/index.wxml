@@ -1,0 +1,70 @@
+<!--pages/detail/index.wxml-->
+<view class="detail">
+    <view class="img">
+        <image src="{{detailData.large_img}}" mode="widthFix"></image>
+    </view>
+    <view class="shop-info">
+        <!-- 商品规格选择 -->
+        <view class="shop-top">
+            <view class="name">
+                <view class="shop-name">{{detailData.name}}</view>
+                <view class="shop-enname">{{detailData.enname}}</view>
+            </view>
+            <view class="shop-price">￥{{detailData.price}}</view>
+        </view>
+        <view class="rule-box">
+            <view class="rule-item" wx:if="{{tem.length>0}}">
+                <!-- 冰 -->
+                <!-- tem的值有多个，因此需要在后台拆分掉然后在前台wx:for-item表示,以下类似情况同理 -->
+                <view class="rule-title">{{detailData.tem_desc}}</view>
+                <view class="{{index==temIndex? 'rule-selected':'rule-select'}}" wx:for="{{tem}}" bindtap="changeTem" data-index="{{index}}">{{item}}</view>
+            </view>
+        </view>
+        <view class="rule-box">
+            <view class="rule-item" wx:if="{{sugar.length>1}}">
+                <!-- 糖 -->
+                <!-- 除了类名和bindtap绑定的函数外，都要加上{{}} -->
+                <view class="rule-title">{{detailData.sugar_desc}}</view>
+                <view class="{{index==sugarIndex? 'rule-selected':'rule-select'}}" wx:for="{{sugar}}" bindtap="changeSugar" data-index="{{index}}">{{item}}</view>
+            </view>
+        </view>
+        <view class="rule-box">
+            <view class="rule-item" wx:if="{{milk.length>1}}">
+                <!-- 奶 ,可以去掉该选项，没有选择-->
+                <view class="rule-title">{{detailData.milk_desc}}</view>
+                <view class="{{index==milkIndex? 'rule-selected':'rule-select'}}" wx:for="{{milk}}" bindtap="changeMilk" data-index="{{index}}">{{item}}</view>
+            </view>
+        </view>
+        <view class="rule-box">
+            <view class="rule-item" wx:if="{{cream.length>1}}">
+                <!-- 奶油 ，因为知道有多项，所以判断大于1 -->
+                <view class="rule-title">{{detailData.cream_desc}}</view>
+                <view class="{{index==creamIndex? 'rule-selected':'rule-select'}}" wx:for="{{cream}}" bindtap="changeCream" data-index="{{index}}">{{item}}</view>
+            </view>
+        </view>
+        <!-- 商品数量 -->
+        <view class="count">
+            <view class="text">选择数量</view>
+            <view class="step">
+                <van-stepper bind:change="onChange" value="{{ count }}" theme="round" input-width="30px" button-size="18px" />
+            </view>
+        </view>
+        <!-- 商品描述 -->
+        <view class="desc">
+            <view class="desc-title">
+                商品描述
+            </view>
+            <view class="shop-desc">{{detailData.desc}}</view>
+        </view>
+    </view>
+    <van-toast id="van-toast" />
+
+    <!-- 底部商品导航 -->
+    <van-goods-action>
+        <van-goods-action-icon icon="bag-o" text="购物袋" bindtap="goCart" />
+        <van-goods-action-icon icon="like" text="收藏" bindtap="cancelCollect" wx:if="{{isCollected}}" />
+        <van-goods-action-icon icon="like-o" text="收藏" bindtap="collect" wx:else />
+        <van-goods-action-button color="#0c34ba" text="加入购物车" type="primary" bindtap="addCart" />
+    </van-goods-action>
+
+</view>

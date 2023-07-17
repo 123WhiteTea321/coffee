@@ -1,0 +1,52 @@
+<!--pages/login/index.wxml-->
+<view class="container">
+    <!--顶部 -->
+    <view class="top">
+        <view class="left">
+            <image src="../../images/LuckinCoffee.png" mode="widthFix"></image>
+        </view>
+        <view class="right" bindtap="goHome">首页</view>
+    </view>
+    <!-- 中部 -->
+    <view class="mid">
+        <view class="text1">欢迎回来!</view>
+        <view class="text2">Please login to your accounts</view>
+    </view>
+
+    <!-- 底部 -->
+    <view class="bottom">
+        <van-cell-group>
+            <van-field model:value="{{ phone }}" bind:blur="checkPhone" label="手机号" placeholder="手机号" error-message="{{PhoneError}}" data-rule="login" />
+            <van-field model:value="{{ password }}" bind:blur="checkPassword" label="密码" type="password" placeholder="密码" error-message="{{PasswordError}}" data-rule="login" />
+        </van-cell-group>
+        <view class="login">
+            <van-button type="primary" color="#1989fa" bindtap="login" round size="large">登录</van-button>
+            <van-dialog id="van-dialog" />
+        </view>
+        <view class="popup">
+            <!-- 注册按钮绑定弹出窗，点击就按钮会弹出窗口了，plain属性消色 -->
+            <van-button type="primary" color="#fffff" bindtap="showPopup" round size="large" plain>注册</van-button>
+        </view>
+    </view>
+    <view class="register">
+        <van-popup show="{{ show }}" position="bottom" custom-style="height: 70%;" bind:close="onClose">
+            <view class="info">
+                <view class="text3">注册</view>
+                <view class="close" bindtap="onClose">x</view>
+            </view>
+            <view class="content">
+                <!-- 手机号 -->
+                <van-field model:value="{{ regPhone }}" bind:blur="checkPhone" label="手机号" placeholder="手机号" error-message="{{regPhoneError}}" data-rule="register" />
+                <!-- 密码 -->
+                <van-field model:value="{{ regPassword }}" bind:blur="checkPassword" label="密码" type="password" placeholder="密码" error-message="{{regPasswordError}}" data-rule="register" />
+                <!-- 昵称 -->
+                <van-field model:value="{{ regNickname }}" bind:blur="checkNickname" label="昵称" placeholder="昵称" error-message="{{NicknameError}}" />
+            </view>
+            <van-button type="primary" color="#fffff" bindtap="register" round size="large">注册</van-button>
+        </van-popup>
+        <van-toast id="van-toast" />
+    </view>
+
+
+
+</view>

@@ -1,0 +1,21 @@
+<!--components/goods-list/index.wxml-->
+<view class="goods-box">
+<!-- 微信小程序不能在函数里传递参数，所以要用data-id绑定pid作为传参，js的函数用事件源e接收 -->
+    <view class="goods-list" wx:for="{{goodList}}" wx:key="index" data-id="{{item.pid}}" bindtap="goDetail">
+        <view class="goods-item">
+            <view class="goods-img">
+                <image src="{{item.smallImg}}" mode="widthFix"></image>
+            </view>
+
+            <view class="goods-info">
+                <view class="goods-name">{{item.name}}</view>
+                <view class="goods-enname">{{item.enname}}</view>
+                <view class="goods-price">￥{{item.price}}</view>
+            </view>
+
+
+        </view>
+
+
+</view>
+</view>

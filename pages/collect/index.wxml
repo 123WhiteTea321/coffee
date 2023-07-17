@@ -1,0 +1,13 @@
+<view class="container">
+  <!-- 顶部 -->
+  <view class="top">
+
+  </view>
+
+  <!-- 卡片 -->
+  <view class="info">
+    <goods-list goodList="{{collectList}}"></goods-list>
+  </view>
+
+
+</view>

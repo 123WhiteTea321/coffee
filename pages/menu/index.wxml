@@ -1,0 +1,19 @@
+<!--pages/menu/index.wxml-->
+<view class="container">
+    <!-- 左边 -->
+    <view class="nav">
+        <van-sidebar active-key="{{ activeKey }}" >
+        <!-- 除了bindtap，小程序里所有绑定的事件名前面都要加上"bind"，比如下面的bindclick,在vant文档中就只是click -->
+            <van-sidebar-item bindclick="changeTab" 
+            wx:for="{{sideList}}" 
+            title="{{item.typeDesc}}" 
+            wx:key="index"/>  
+        </van-sidebar>
+    </view>
+    <!-- 右边 -->
+    <view class="item">
+    <!-- 在json里面声明就能用了 -->
+      <goods-list goodList="{{productList}}"></goods-list>
+
+    </view>
+</view>

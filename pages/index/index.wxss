@@ -1,0 +1,32 @@
+/**index.wxss**/
+.top{
+  display: flex;
+  align-items: center;
+
+}
+.tips{
+  font-size: 14px;
+  margin-left: 10px;
+}
+/* .tips>text:nth-child(2){
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 3px;
+} */
+.text1{
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 3px;
+}
+.banner{
+  margin: 0 10px;
+  border-radius: 11px;
+  overflow: hidden;
+}
+.banner>swiper{
+  width: 100%;
+  height: 230px;
+}
+.banner-img{
+  width: 100%;
+}

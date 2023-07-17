@@ -1,0 +1,83 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/menu/index",
+    "pages/detail/index",
+    "pages/shoppingbag/index",
+    "pages/my/index",
+    "pages/login/index",
+    "pages/order/index",
+    "pages/user/index",
+    "pages/safety/index",
+    "pages/collect/index",
+    "pages/address/index",
+    "pages/editAddress/index",
+    "pages/addAddress/index",
+    "pages/images/index"
+
+
+
+
+
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "coffee",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png"
+      },
+      {
+        "pagePath": "pages/menu/index",
+        "text": "菜单",
+        "iconPath": "images/menu.png",
+        "selectedIconPath": "images/menu_active.png"
+      }, {
+        "pagePath": "pages/shoppingbag/index",
+        "text": "购物袋",
+        "iconPath": "images/shopbag.png",
+        "selectedIconPath": "images/shopbag_active.png"
+      }, {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_active.png"
+      }
+    ],
+    "selectedColor": "#0c34ba"
+
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-submit-bar": "@vant/weapp/submit-bar/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "van-area": "@vant/weapp/area/index"
+
+
+
+
+
+
+  }
+
+}

@@ -1,0 +1,56 @@
+<view class="container">
+    <view class="blank"></view>
+    <!-- 地址选择栏 -->
+    <view class="smallCard">
+        <view class="choose">
+            <view class="title">选择地址</view>
+            <view class="icon">></view>
+        </view>
+        <view class="userinfo">
+            <view class="name">康刘勇</view>
+            <view class="phone">15219209751</view>
+            <view class="tip">默认</view>
+        </view>
+        <view class="address">广东省广州市天河区珠吉街道100号</view>
+    </view>
+    <!-- 订单信息栏 -->
+    <view class="bigCard">
+        <view class="order-title">订单信息</view>
+        <!-- 订单列表 -->
+        <view class="list" wx:for="{{shopsList}}">
+            <van-cell-group>
+            <view class="item">
+                <view class="cart-left">
+                    <view class="img">
+                        <image src="{{item.large_img}}" mode="widthFix"></image>
+                    </view>
+                </view>
+                <view class="cart-info">
+                    <view class="info-top">
+                        <view class="name">{{item.name}}</view>
+                        <view class="rule">{{item.rule}}</view>
+                    </view>
+                    <view class="enname">{{item.enname}}</view>
+                    <view class="price-count">
+                        <view class="price">￥{{item.price}}</view>
+                        <view class="count">
+                            x{{item.count}}
+                        </view>
+                    </view>
+
+                </view>
+            
+            </view>
+               
+            </van-cell-group>
+        </view>
+        <view class="total-price">
+            <view class="total">共计{{shopRows}}件商品</view>
+            <view class="totalprice">订单金额：￥{{totalPrice}}</view>
+        </view>
+    </view>
+    <!-- 结算按键 -->
+    <view class="btn" bindtap="pay">立即结算</view>
+
+
+</view>

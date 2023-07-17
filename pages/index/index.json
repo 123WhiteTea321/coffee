@@ -1,0 +1,7 @@
+{
+  
+  "usingComponents": {
+    "goods-list1":"../../components/goods-list1/index",
+    "van-search": "@vant/weapp/search/index"
+  }
+}

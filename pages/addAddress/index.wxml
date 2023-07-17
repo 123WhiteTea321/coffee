@@ -1,0 +1,32 @@
+<!--pages/addAddress/index.wxml-->
+<view class="container">
+    <view class="blank"></view>
+    <view class="bigCard">
+        <van-cell-group>
+        <!-- 血泪教训：必须是model:value!!! -->
+            <van-field model:value="{{ name }}" label="姓名" placeholder="姓名" />
+            <van-field model:value="{{ tel }}" label="电话" placeholder="电话" border="{{ false }}" />
+            <!-- 地区栏：级联，普通地址都行-->
+            <!-- 怎么做到选定地区后在输入框上显示出来呢,跟name.value有关？ -->
+            <van-field model:value="{{ area }}" label="地区" icon="arrow" placeholder="地区" bind:click-icon="showPopup" />
+            <van-popup show="{{ show }}" position="bottom" custom-style="height: 40%;" bind:close="onClose">
+                <van-area model:area-list="{{ areaList }}" item-height="24" bind:confirm="confirm" bind:cancel="cancel" bind:change="change" />
+            </van-popup>
+            <!-- 地区栏 -->
+            <van-field model:value="{{ addressDetail }}" label="详细地址" placeholder="详细地址" border="{{ false }}" />
+            <van-field model:value="{{ postalCode }}" label="邮政编码" placeholder="邮政编码" border="{{ false }}" />
+        </van-cell-group>
+
+
+    </view>
+    <view class="smallCard">
+        <view class="text">设为默认地址</view>
+        <view class="switch">
+            <van-switch checked="{{ checked }}" bind:change="onChange" size="large" />
+        </view>
+    </view>
+    <view class="addAddress" bindtap="addAddress">保存</view>
+    <van-dialog id="van-dialog" />
+
+
+</view>

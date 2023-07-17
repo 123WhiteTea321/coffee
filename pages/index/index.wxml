@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="home">
+    <!-- 顶部 -->
+    <view class="top">
+        <vew class="tips">
+            <text>下午好</text>
+            <text wx:if="{{isLogined}}" class="text1">已登录</text>
+            <text wx:else class="text1" bindtap="login">登录</text>
+        </vew>
+        <view class="search">
+            <van-search value="{{ value }}" shape="round" background="#fff" placeholder="请输入搜索关键词" />
+        </view>
+    </view>
+    <!-- 轮播图 -->
+    <view class="banner">
+        <swiper autoplay indicator-dots 	circular>
+        <!-- 变量都要加上{{}} -->
+            <swiper-item wx:for="{{bannerList}}">
+                <image class="banner-img" src="{{item.bannerImg}}" mode="aspectFill"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- 热卖 -->
+    <view class="hot-box">
+    <goods-list1 goodList="{{hotList}}"></goods-list1>
+    </view>
+</view>

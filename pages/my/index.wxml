@@ -1,0 +1,37 @@
+
+<view class="container">
+    <!-- 顶部 -->
+    <view class="top">
+
+    </view>
+
+    <!-- 卡片 -->
+    <view class="info">
+        <!-- 使用信息 -->
+        <!-- 抽空把头像和简介加上 -->
+        <view class="userinfo">
+            <view class="content">
+                <view class="ava-name">头像</view>
+                <view class="avatar">
+                    <!-- <image src="../../images/lovely.webp" mode="widthFix"></image> -->
+                    <image src="{{personList.userImg}}" mode="widthFix"></image>
+                </view>
+            </view>
+            <van-cell-group>
+                <van-cell title="用户id" value="{{personList.userId}}" />
+                <van-cell title="手机号" value="{{personList.phone}}" />
+                <van-cell title="昵称" value="{{personList.nickName}}" />
+                <van-cell title="简介"  label="2022与你相约在粤嵌，爱你哟么么哒" border="{{ false }}" />
+                <!-- <van-cell title="简介"  label="{{personList.desc}}" border="{{ false }}" /> -->
+                <!-- <van-cell title="简介"  model:label="{{desc}}" border="{{ false }}" /> -->
+                <!-- <van-cell title="简介"  label="{{desc}}" border="{{ false }}" /> -->
+
+
+            </van-cell-group>
+
+        </view>
+
+    </view>
+
+
+</view>

@@ -1,0 +1,15 @@
+{
+  "name": "coffee",
+  "version": "1.0.0",
+  "description": "1. 项目初始化\r npm init",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/area-data": "^1.4.1",
+    "@vant/weapp": "^1.10.14"
+  }
+}
